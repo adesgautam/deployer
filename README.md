@@ -1,6 +1,7 @@
 # Deployer 
 
-## This tool deploys your ML models using flask. Just setup the config fields and you are good to go.
+## This tool deploys your ML models using flask. 
+## Just setup the config fields and you are good to go.
 
 * Currently only supports Keras models(h5 files) for image classification.
 
@@ -27,3 +28,14 @@ Download the repo and setup the config files,
 ### labels.txt
 
 Put the label names in each line in order.
+
+### Run
+
+After setting up the config files, run the flask server using:
+`python prediction.py`
+
+Now, the HTTP POST request can be made to `http://127.0.0.1:5000/predict`. Use the following for sending a POST request using curl.
+
+`curl -F 'file=@/path/to/image' 'http://127.0.0.1:5000/predict'`
+
+Or you can navigate to `http://127.0.0.1:5000/index` to utilize GUI and upload image.
