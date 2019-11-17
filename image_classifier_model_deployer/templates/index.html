@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+	<title>Image Classifier</title>
+</head>
+<body>
+	{% block content %}
+
+		<p> 
+			<img class='img-responsive' border="2" src="{{ img }}" /> 
+		</p>
+		<div>&nbsp;</div>
+	 	
+		<h2>{{ msg }}</h2>
+		<form action="/index" method="POST" enctype="multipart/form-data">
+		    <input type="file" name="file">
+		    <input class="btn btn-default navbar-btn" type="submit" value="Upload" />
+		</form>
+		<p>
+			<div>&nbsp;</div>
+			<a type="button" class="btn btn-default navbar-btn" href='/process'>Guess</a>
+		</p>
+	{% endblock %}
+
+	{% block footer %}
+	<hr>
+	<p>Thanks for visiting </p>
+	{% endblock %}
+</body>
+</html>

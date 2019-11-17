@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+	{% block content %}
+		<p> 
+			<img  class='img-responsive' border="2" src="/media/images/originals/{{ img }}"/> 
+		</p>
+		<p> It's {% for k,v in prediction.items %}
+					<li>{{ k }}: {{ v }}</li>
+				 {% endfor %}
+		 </p>
+		
+	 	<p> <a type="button" class="btn btn-default navbar-btn" href='/img_upload/'>Try different Image</a> </p>
+	{% endblock %}
+
+
+	{% block footer %}
+	<hr>
+	<p>Thanks for visiting my site.</p>
+	{% endblock %}
+</body>
+</html>
